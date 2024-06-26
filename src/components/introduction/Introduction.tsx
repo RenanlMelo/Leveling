@@ -8,7 +8,9 @@ export const Introduction = () => {
         <Image
           src="/GLASS_EFFECT_LOGO.svg"
           alt="Logo com efeito"
-          className="w-[750px] absolute right-32 top-32"
+          className="absolute right-32 top-32"
+          width={1000}
+          height={1000}
         />
         <div className="w-full h-full flex justify-center items-start flex-col">
           <h1 className="text-5xl text-[#eee] max-w-3xl font-black tracking-wider">
