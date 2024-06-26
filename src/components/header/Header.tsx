@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./Header.css";
+import Image from "next/image";
+
 
 const Header: React.FC = () => {
   const [activeItem, setActiveItem] = useState("home");
@@ -14,7 +16,7 @@ const Header: React.FC = () => {
   return (
     <>
       <header className="absolute grid grid-cols-2 justify-center items-center px-10 w-full z-40">
-        <img src="./logo.png" alt="Logo" className="w-48" />
+        <Image src="./logo.png" alt="Logo" className="w-48" />
         <nav className="w-full flex justify-end items-center">
           <ul className="text-xl text-[#eee] flex gap-x-8">
             {menuItems.map((item, index) => (

@@ -1,11 +1,12 @@
 import "./introduction.css";
+import Image from "next/image";
 
 export const Introduction = () => {
   return (
     <>
       <section className="w-full h-screen flex justify-center items-center relative px-48">
-        <img
-          src="public\GLASS_EFFECT_LOGO.svg"
+        <Image
+          src="/GLASS_EFFECT_LOGO.svg"
           alt="Logo com efeito"
           className="w-[750px] absolute right-32 top-32"
         />
