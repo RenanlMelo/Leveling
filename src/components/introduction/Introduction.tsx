@@ -5,7 +5,7 @@ export const Introduction = () => {
     <>
       <section className="w-full h-screen flex justify-center items-center relative px-48">
         <img
-          src=".\GLASS_EFFECT_LOGO.svg"
+          src="/GLASS_EFFECT_LOGO.svg"
           alt="Logo com efeito"
           className="w-[750px] absolute right-32 top-32"
         />
