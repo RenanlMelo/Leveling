@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* c700b6 */
+/* af00a1 */
+
+:root {
+  --primary-color: #4c00ff;
+  --primaryDarken-color: #4c00ffcc;
+  --secondary-color: #814bff;
+
+  --dark-color: #101010;
+  --services-card: rgb(94, 0, 218);
+  --services-cardHover: rgba(94, 0, 218, 0.565);
+}
