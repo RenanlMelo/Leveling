@@ -15,9 +15,9 @@ const Header: React.FC = () => {
   return (
     <>
       <header className="absolute grid grid-cols-2 justify-center items-center px-10 w-full z-40">
-        <img src="/logo.png" alt="Logo" className="w-48" />
+        <img src="/logo.png" alt="Logo" className="w-[10vw]" />
         <nav className="w-full flex justify-end items-center">
-          <ul className="text-xl text-[#eee] flex gap-x-8">
+          <ul className="text-[1.05vw] text-[#eee] flex gap-x-[1vw]">
             {menuItems.map((item, index) => (
               <li
                 key={index}
