@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Header.css";
-import { motion, AnimatePresence, useScroll, useAnimation } from "framer-motion";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
 
 
 
