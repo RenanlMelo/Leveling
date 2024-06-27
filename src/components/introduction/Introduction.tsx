@@ -3,7 +3,7 @@ import "./introduction.css";
 export const Introduction = () => {
   return (
     <>
-      <section className="w-full h-screen grid grid-cols-2 justify-center items-center relative px-[10vw]">
+      <section className="w-full grid grid-cols-2 justify-center items-center relative px-[10vw] py-[10vh]">
         <div className="w-[100%] h-full flex justify-center items-start flex-col">
           <h1 className="text-[2.5vw] leading-[1] text-[#eee] max-w-3xl font-black tracking-wider">
             Desenvolvimento de <br />
@@ -13,9 +13,9 @@ export const Introduction = () => {
             <br />
             para o seu negócio.
           </h1>
-          <h3 className="text-[1.2vw] text-[#eeeeee75] my-10">
+          <h2 className="text-[1.2vw] text-[#eeeeee75] my-10">
             Inserir subtítulo descritivo
-          </h3>
+          </h2>
           <div className="div_svgLogo gap-x-2 relative flex h-[6vh] w-[10vw] items-center justify-center overflow-hidden rounded-full bg-[#101010] border-2 border-[#aaaaaa80] hover:border-[#aaa] text-[var(--secondary-color)] hover:text-[#eee] shadow-[0_15px_30px_-12px_rgba(0,0,0,1)] transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[var(--primary-color)] before:duration-500 before:ease-out hover:shadow-[var(--primary-color)] hover:before:h-56 hover:before:w-56">
             <button className="text-[1.2vw] z-10">Serviços</button>
             <svg
