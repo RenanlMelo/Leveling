@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { Link } from "react-scroll";
 import "./Header.css";
 
 const Header: React.FC = () => {
@@ -30,7 +31,7 @@ const Header: React.FC = () => {
   const menuItems = [
     { name: "Início", id: "inicio" },
     { name: "Serviços", id: "servicos" },
-    { name: "Portfólio", id: "portfolio" },
+    { name: "Portifólio", id: "portifolio" },
     { name: "Sobre", id: "sobre" },
     { name: "Equipe", id: "equipe" },
   ];
@@ -54,7 +55,9 @@ const Header: React.FC = () => {
                   }`}
                   onClick={() => setActiveItem(item.id)}
                 >
-                  {item.name === "Serviços" ? <>{item.name}</> : item.name}
+                  <Link activeClass='active' smooth spy duration={1000} to={`${item.id}`} >
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -67,35 +70,3 @@ const Header: React.FC = () => {
 
 export default Header;
 
-{
-  /* <ul className="text-xl text-[#eee] flex gap-x-8">
-  <li>Início</li>
-  <li className="flex justify-center items-center gap-x-2">
-    Serviços{" "}
-    <svg
-    width="20"
-      height="8"
-      viewBox="0 0 20 8"
-      fill="none"
-      className="svg_logo translate-y-1/2"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M1 1L9.91628 6.14782"
-        stroke=""
-        stroke-width="2"
-        stroke-linecap="round"
-      />
-      <path
-        d="M10 6.14783L18.9163 1.00001"
-        stroke=""
-        stroke-width="2"
-        stroke-linecap="round"
-      />
-    </svg>
-  </li>
-  <li>Sobre</li>
-  <li>Portifólio</li>
-  <li>Equipe</li>
-</ul> */
-}

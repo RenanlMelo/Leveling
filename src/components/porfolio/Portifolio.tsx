@@ -1,7 +1,7 @@
 export const Portifolio = () => {
   return (
     <>
-      <section className="w-full flex flex-col justify-center items-center py-32 bg-transparent">
+      <section id="portifolio" className="w-full flex flex-col justify-center items-center py-32 bg-transparent">
         <h1 className="text-[#eee] text-[2.5vw] font-bold tracking-wide mb-24">
           Portifólio
         </h1>
