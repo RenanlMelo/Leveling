@@ -5,7 +5,7 @@ export const Services = () => {
   return (
     <>
       <div className="flex relative w-full">
-        <img src="/division.png" alt="" className="absolute -translate-y-1/2" />
+        <img src="/division.png" alt="" className="absolute -translate-y-1/3" />
         <motion.section className="h-fit w-full px-[10vw] bg-transparent bg-no-repeat bg-cover py-32 shadow-division z-10">
           <motion.h2 className="text-[#eee] text-center text-[2.5vw] font-bold tracking-wide mb-24">
             Serviços oferecidos

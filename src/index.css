@@ -14,3 +14,38 @@
   --services-card: rgb(94, 0, 218);
   --services-cardHover: rgba(94, 0, 218, 0.565);
 }
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-button {
+  width: 35px;
+  height: 35px;
+}
+::-webkit-scrollbar-thumb {
+  background: #0a0a0a;
+  border: 0px solid #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-track {
+  background: #282828;
+  border: 0px none #ffffff;
+  border-radius: 53px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #282828;
+}
+::-webkit-scrollbar-track:active {
+  background: #282828;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
