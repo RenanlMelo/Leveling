@@ -1,15 +1,14 @@
 export const Portifolio = () => {
   return (
     <>
-      <section className="w-full flex flex-col justify-center items-center py-32 bg-transparent">
+      <section id="portifolio" className="w-full flex flex-col justify-center items-center py-32 bg-transparent">
         <h1 className="text-[#eee] text-[2.5vw] font-bold tracking-wide mb-24">
           Portifólio
         </h1>
         <div className="w-full grid grid-cols-2 justify-evenly items-center px-96 gap-x-48">
-
           <div className=" w-full h-full rounded-[30px] flex flex-col gap-y-10 overflow-hidden font-sans shadow-shadow_card">
             <img src="/bg.png" alt="" className="w-full h-1/2" />
-            <h2 className="text-2xl font-bold text-[#eee] mx-12 px-3 py-2 rounded-3xl w-fit g-[var(--services-card)]">
+            <h2 className="text-2xl font-bold text-[#eee] mx-12 px-3 py-2 rounded-3xl w-fit">
               Unilock Pisos
             </h2>
             <p className="text-lg text-[#ccc] px-10">
@@ -27,7 +26,7 @@ export const Portifolio = () => {
 
           <div className=" w-full h-full rounded-[30px] flex flex-col gap-y-10 overflow-hidden font-sans shadow-shadow_card">
             <img src="./bg.png" alt="" className="w-full h-1/2" />
-            <h2 className="text-2xl font-bold text-[#eee] mx-12 px-3 py-2 rounded-3xl w-fit g-[var(--services-card)]">
+            <h2 className="text-2xl font-bold text-[#eee] mx-12 px-3 py-2 rounded-3xl w-fit">
               Unilock Pisos
             </h2>
             <p className="text-lg text-[#ccc] px-10">
