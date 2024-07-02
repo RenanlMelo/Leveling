@@ -3,7 +3,11 @@ import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import { Link } from "react-scroll";
 import "./Header.css";
 
-const Header: React.FC = () => {
+type headerProps = {
+  sectionSize: number | null;
+};
+
+export const Header: React.FC<headerProps> = ({ sectionSize }) => {
   const controls = useAnimation();
 
   const [scrollY, setScrollY] = useState(0);
@@ -31,16 +35,15 @@ const Header: React.FC = () => {
   const menuItems = [
     { name: "Início", id: "inicio" },
     { name: "Serviços", id: "servicos" },
-    { name: "Portifólio", id: "portifolio" },
+    { name: "Cases", id: "cases" },
     { name: "Sobre", id: "sobre" },
-    { name: "Equipe", id: "equipe" },
   ];
 
   return (
     <>
       <AnimatePresence>
         <motion.header
-          className="fixed grid grid-cols-2 justify-center items-center px-10 w-full z-40 bg-[#080808]"
+          className="fixed grid grid-cols-2 justify-center items-center max-w-[100vw] px-10 w-full z-40 bg-[#080808]"
           initial={{ backgroundColor: "transparent" }}
           animate={controls}
         >
@@ -55,7 +58,18 @@ const Header: React.FC = () => {
                   }`}
                   onClick={() => setActiveItem(item.id)}
                 >
-                  <Link activeClass='active' smooth spy duration={1000} to={`${item.id}`} >
+                  <Link
+                    activeClass="active"
+                    smooth
+                    spy
+                    duration={800}
+                    offset={
+                      item.name === "Serviços" && sectionSize !== null
+                        ? sectionSize * (-1 / 3)
+                        : 0
+                    }
+                    to={`${item.id}`}
+                  >
                     {item.name}
                   </Link>
                 </li>
@@ -67,6 +81,4 @@ const Header: React.FC = () => {
     </>
   );
 };
-
-export default Header;
 
