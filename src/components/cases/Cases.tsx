@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
 
 const casesData = [
   {
@@ -14,7 +16,7 @@ const casesData = [
 ];
 
 export const Cases = () => {
-  const [visibleIndex, setVisibleIndex] = useState(null);
+  const [visibleIndex, setVisibleIndex] = useState<number | null>(null);
 
   return (
     <>
@@ -22,34 +24,42 @@ export const Cases = () => {
         id="cases"
         className="w-full flex flex-col justify-center items-center py-32"
       >
-        <h1 className="text-[#eee] text-[2.5vw] font-bold tracking-wide mb-24">
+        <h1 className="text-[#eee] text-[2.5vw] font-bold tracking-wide mb-[calc(10vh)]">
           Cases
         </h1>
-        <div className="w-full grid grid-cols-2 justify-evenly items-center px-96 gap-x-48">
+        <div className="w-full grid grid-cols-2 justify-evenly items-center px-[15vw] gap-x-[10vw]">
           {casesData.map((project, index) => (
             <div
               onMouseEnter={() => setVisibleIndex(index)}
               onMouseLeave={() => setVisibleIndex(null)}
-              className="w-full h-full rounded-[30px] flex flex-col gap-y-10 overflow-hidden font-sans shadow-shadow_card relative"
+              className="rounded-[30px] flex flex-col gap-y-[4vh] overflow-hidden font-sans shadow-shadow_card relative"
               key={index}
             >
-              <img src="/bg.png" alt="" className="w-full h-1/2" />
-              <h2 className="text-2xl font-bold text-[#eee] mx-12 px-3 py-2 rounded-3xl w-fit">
+              <img src="/bg.png" alt="" />
+              <h2 className="text-[calc(1.35vw+5px)] font-bold text-[#eee] mx-[3vw] px-[1vw] py-[1vh] rounded-3xl w-fit">
                 {project.title}
               </h2>
-              <p className="text-lg text-[#ccc] px-10">{project.description}</p>
-              <span className="w-full flex justify-end items-center">
-                <img
-                  id="saibaMais"
-                  src="/saiba_mais.png"
-                  alt="Saiba Mais"
-                  className={`absolute right-4 bottom-4 w-8 ${visibleIndex === index ? "" : "hidden"}`}
-                />
+              <p className="text-[calc(1vw+2px)] text-[#ccc] px-10">{project.description}</p>
+              <span className="w-(calc(100%-2vw)) h-[calc(4vh+10px)] flex justify-end items-center mx-[2vw] py-[2vh] overflow-hidden relative">
+                <AnimatePresence>
+                  {visibleIndex === index && (
+                    <motion.a
+                      href=""
+                      id="saibaMais"
+                      initial={{ x: 100 }}
+                      animate={{ x: 0 }}
+                      exit={{ x: 100 }}
+                      transition={{ duration: .5 }}
+                      className={`hover:text-[#aaa] hover:decoration-[#aaa] decoration-transparent underline-offset-2 underline px-3 py-2 duration-75 ease-linear text-[1vw] whitespace-nowrap mb-4 text-[#eee] ${visibleIndex === index ? "opacity-100" : "opacity-0"}`}>
+                      Saiba mais
+                    </motion.a>
+                  )}
+                </AnimatePresence>
               </span>
             </div>
           ))}
         </div>
-      </section>
+      </section >
     </>
   );
 };

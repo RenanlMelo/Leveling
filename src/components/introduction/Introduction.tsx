@@ -33,51 +33,37 @@ export const Introduction: React.FC<introductionProps> = ({ sectionSize }) => {
 
   return (
     <>
-<<<<<<< HEAD
-      <section className="w-full grid grid-cols-2 justify-center items-center relative px-[10vw] py-[10vh]">
-        <div className="w-[100%] h-full flex justify-center items-start flex-col">
-          <h1 className="text-[2.5vw] leading-[1] text-[#eee] max-w-3xl font-black tracking-wider">
-            Desenvolvimento de <br />
-            <strong className="font-bold text-[3.25vw] gradiente">
-              soluções web
-=======
       <section
         id="inicio"
-        className="w-full grid grid-cols-2 justify-center items-center relative px-[10vw] py-32"
+        className="w-full grid grid-cols-2 justify-center items-center relative px-[10vw] py-[calc(10vh+20px)]"
       >
         <div className="h-full flex justify-center items-start flex-col">
           <h1 className="text-[2.5vw] leading-[1] text-[#eee] font-black tracking-wider w-full">
             <strong className="font-bold text-[3.25vw] gradiente pr-3">
               Eleve e impulsione, <br />
->>>>>>> 7a3c39dc4a25192f261c7de9cd8ac624f0979ea9
             </strong>
             o nível do seu negócio
           </h1>
-<<<<<<< HEAD
-          <h2 className="text-[1.2vw] text-[#eeeeee75] my-10">
-            Inserir subtítulo descritivo
-          </h2>
-          <div className="div_svgLogo gap-x-2 relative flex h-[6vh] w-[10vw] items-center justify-center overflow-hidden rounded-full bg-[#101010] border-2 border-[#aaaaaa80] hover:border-[#aaa] text-[var(--secondary-color)] hover:text-[#eee] shadow-[0_15px_30px_-12px_rgba(0,0,0,1)] transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[var(--primary-color)] before:duration-500 before:ease-out hover:shadow-[var(--primary-color)] hover:before:h-56 hover:before:w-56">
-=======
-          <h3 className="text-[1.2vw] text-[#eeeeee75] my-[calc(65px-5vh)]">
+          <h3 className="text-[calc(1.2vw+5px)] text-[#eeeeee75] mt-[calc(20px-2vh)] mb-[calc(60px-2vh)]">
             Digitalizando empresas
           </h3>
           <Link
             smooth
             spy
             duration={1000}
-            offset={sectionSize !== null ? sectionSize * (-1 / 3) : 0}
+            offset={sectionSize !== null
+              ? -Math.round(window.innerHeight / 2 - sectionSize / 2)
+              : 0}
             to={"servicos"}
             className="div_svgLogo gap-x-2 relative flex h-[6vh] w-[10vw] items-center justify-center overflow-hidden rounded-full bg-transparent border-2 border-[#aaaaaa80] hover:border-[#aaa] text-[var(--secondary-color)] hover:text-[#eee] shadow-[0_15px_30px_-12px_rgba(0,0,0,1)] transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[var(--primary-color)] before:duration-500 before:ease-out hover:shadow-[var(--primary-color)] hover:before:h-56 hover:before:w-56"
           >
->>>>>>> 7a3c39dc4a25192f261c7de9cd8ac624f0979ea9
             <button className="text-[1.2vw] z-10">Serviços</button>
             <svg
-              width="20"
-              height="8"
-              viewBox="0 0 20 8"
+              width="1.6vw"
+              height="1.2vh"
+              viewBox="0 0 1.6vw 1.2vh"
               fill="none"
-              className="svg_logo translate-y-1/2"
+              className="svg_logo translate-y-1/4"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path

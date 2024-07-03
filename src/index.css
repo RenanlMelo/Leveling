@@ -14,7 +14,8 @@
   --dark-color: #101010;
   --services-card: rgb(94, 0, 218);
   --services-cardHover: rgba(94, 0, 218, 0.565);
-  --services-bg: rgba(55, 0, 128, .55);
+  --services-bg: rgba(40, 0, 100, 1);
+  --services-bgDarken: rgba(20, 0, 60, 1);
 }
 
 
