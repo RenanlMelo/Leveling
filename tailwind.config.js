@@ -4,9 +4,10 @@ export default {
   theme: {
     extend: {
       boxShadow: {
-        sectionBorder: "inset 0 0 50px 0 #000000",
-        servicesCard: "0 12px 20px -5px rgba(94,0,218,1)",
-        servicesCardHover: "0 12px 20px -5px rgba(94, 0, 218, 0.565)",
+        servicesCard: "0 12px 20px 0 rgba(0,0,0,.2)",
+        servicesCardHover: "3px 10px 25px 0px rgba(0,0,0,.7)",
+        shadow_card: "inset 0 -100px 70px -70px rgba(72,0,160,.7)",
+        division: "inset"
       },
     },
   },

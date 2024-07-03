@@ -1,22 +1,76 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-scroll";
+import { useAnimation } from "framer-motion";
 import "./introduction.css";
 
-export const Introduction = () => {
+type introductionProps = {
+  sectionSize: number | null;
+};
+
+export const Introduction: React.FC<introductionProps> = ({ sectionSize }) => {
+  const controls = useAnimation();
+
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    controls.start({
+      backgroundColor: scrollY > 50 ? "#000000" : "transparent",
+      transition: { duration: 0.5 },
+    });
+  }, [scrollY, controls]);
+
   return (
     <>
+<<<<<<< HEAD
       <section className="w-full grid grid-cols-2 justify-center items-center relative px-[10vw] py-[10vh]">
         <div className="w-[100%] h-full flex justify-center items-start flex-col">
           <h1 className="text-[2.5vw] leading-[1] text-[#eee] max-w-3xl font-black tracking-wider">
             Desenvolvimento de <br />
             <strong className="font-bold text-[3.25vw] gradiente">
               soluções web
+=======
+      <section
+        id="inicio"
+        className="w-full grid grid-cols-2 justify-center items-center relative px-[10vw] py-32"
+      >
+        <div className="h-full flex justify-center items-start flex-col">
+          <h1 className="text-[2.5vw] leading-[1] text-[#eee] font-black tracking-wider w-full">
+            <strong className="font-bold text-[3.25vw] gradiente pr-3">
+              Eleve e impulsione, <br />
+>>>>>>> 7a3c39dc4a25192f261c7de9cd8ac624f0979ea9
             </strong>
-            <br />
-            para o seu negócio.
+            o nível do seu negócio
           </h1>
+<<<<<<< HEAD
           <h2 className="text-[1.2vw] text-[#eeeeee75] my-10">
             Inserir subtítulo descritivo
           </h2>
           <div className="div_svgLogo gap-x-2 relative flex h-[6vh] w-[10vw] items-center justify-center overflow-hidden rounded-full bg-[#101010] border-2 border-[#aaaaaa80] hover:border-[#aaa] text-[var(--secondary-color)] hover:text-[#eee] shadow-[0_15px_30px_-12px_rgba(0,0,0,1)] transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[var(--primary-color)] before:duration-500 before:ease-out hover:shadow-[var(--primary-color)] hover:before:h-56 hover:before:w-56">
+=======
+          <h3 className="text-[1.2vw] text-[#eeeeee75] my-[calc(65px-5vh)]">
+            Digitalizando empresas
+          </h3>
+          <Link
+            smooth
+            spy
+            duration={1000}
+            offset={sectionSize !== null ? sectionSize * (-1 / 3) : 0}
+            to={"servicos"}
+            className="div_svgLogo gap-x-2 relative flex h-[6vh] w-[10vw] items-center justify-center overflow-hidden rounded-full bg-transparent border-2 border-[#aaaaaa80] hover:border-[#aaa] text-[var(--secondary-color)] hover:text-[#eee] shadow-[0_15px_30px_-12px_rgba(0,0,0,1)] transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[var(--primary-color)] before:duration-500 before:ease-out hover:shadow-[var(--primary-color)] hover:before:h-56 hover:before:w-56"
+          >
+>>>>>>> 7a3c39dc4a25192f261c7de9cd8ac624f0979ea9
             <button className="text-[1.2vw] z-10">Serviços</button>
             <svg
               width="20"
@@ -39,12 +93,12 @@ export const Introduction = () => {
                 stroke-linecap="round"
               />
             </svg>
-          </div>
+          </Link>
         </div>
         <img
           src="/logo_introduction.png"
           alt="Logo com efeito"
-          className="w-[100%] col-start-2 row-start-1 right-32 top-32"
+          className="lg:w-[100%] right-32 top-32 col-start-1 lg:col-start-2  lg:block "
         />
       </section>
     </>

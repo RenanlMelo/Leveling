@@ -9,10 +9,12 @@
   --primary-color: #4c00ff;
   --primaryDarken-color: #4c00ffcc;
   --secondary-color: #814bff;
+  --secondaryDarken-color: #814bffcc;
 
   --dark-color: #101010;
   --services-card: rgb(94, 0, 218);
   --services-cardHover: rgba(94, 0, 218, 0.565);
+  --services-bg: rgba(55, 0, 128, .55);
 }
 
 
