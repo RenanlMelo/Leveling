@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "next lint",
     "preview": "next start",
     "postinstall": "node -e \"process.platform === 'win32' ? require('child_process').execSync('npm install @next/swc-win32-x64-msvc') : require('child_process').execSync('npm install @next/swc-linux-x64')\""
   },
@@ -33,6 +33,7 @@
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.4",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "postcss": "^8.4.38",

@@ -90,8 +90,8 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
             </p>
           </div>
           <blockquote className="text-[calc(.7vw+8px)] text-[#aaa] px-10 mt-[3vh]">
-            "Nossa missão é digitalizar os sonhos e objetivos de todos os
-            empreendedores."
+            &quot;Nossa missão é digitalizar os sonhos e objetivos de todos os
+            empreendedores.&quot;
             <br />- Leveling
           </blockquote>
         </div>
@@ -118,14 +118,14 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
                   <path
                     d="M1 1L9.91628 6.14782"
                     stroke="#eee"
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                   />
                   <path
                     d="M10 6.14783L18.9163 1.00001"
                     stroke="#eee"
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                   />
                 </svg>
               </div>

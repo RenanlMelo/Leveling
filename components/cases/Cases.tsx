@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 
 
 const casesData = [
@@ -35,7 +36,7 @@ export const Cases = () => {
               className="rounded-[30px] flex flex-col gap-y-[4vh] overflow-hidden font-sans shadow-shadow_card relative"
               key={index}
             >
-              <img src="/bg.png" alt="" className="w-fit"/>
+              <Image src="/bg.png" alt="" className="w-fit"/>
               <h2 className="text-[calc(1.35vw+5px)] font-bold text-[#eee] mx-[3vw] px-[1vw] py-[1vh] rounded-3xl w-fit">
                 {project.title}
               </h2>

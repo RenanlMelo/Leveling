@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { useAnimation } from "framer-motion";
+import Image from "next/image";
 
 type introductionProps = {
   sectionSize: number | null;
@@ -83,7 +84,7 @@ export const Introduction: React.FC<introductionProps> = ({ sectionSize }) => {
             </div>
           </Link>
         </div>
-        <img
+        <Image
           src="/logo_introduction.png"
           alt="Logo com efeito"
           className="lg:w-[100%] blur-sm md:blur-none -z-10 md:right-32 top-16 md:top-32 col-start-1 lg:col-start-2 absolute md:static "
