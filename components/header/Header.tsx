@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import { Link } from "react-scroll";
-import { scrollToTop } from "react-scroll/modules/mixins/animate-scroll";
-
 
 type headerProps = {
   sectionSize: number | null;
