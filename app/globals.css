@@ -1,0 +1,138 @@
+/* header */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* c700b6 */
+/* af00a1 */
+
+:root {
+    --primary-color: #4c00ff;
+    --primaryDarken-color: #4c00ffcc;
+    --secondary-color: #814bff;
+    --secondaryDarken-color: #814bffcc;
+
+    --dark-color: #4c00ff;
+    --services-card: rgb(94, 0, 218);
+    --services-cardHover: rgba(94, 0, 218, 0.565);
+    --dark-purple: #36017b;
+    --services-bgDarken: rgba(20, 0, 60, 1);
+}
+
+/* select:focus > option:hover { 
+    background: var(--services-cardHover) !important;
+} */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-button {
+    width: 35px;
+    height: 35px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0a0a0a;
+    border: 0px solid #ffffff;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-track {
+    background: #282828;
+    border: 0px none #ffffff;
+    border-radius: 53px;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #282828;
+}
+
+::-webkit-scrollbar-track:active {
+    background: #282828;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #020202;
+}
+
+li {
+    border-bottom: 2px solid transparent;
+    transition: 0.3s all;
+    border-width: 0%;
+    padding: 5px 16px;
+    cursor: pointer;
+}
+
+li:hover {
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: 0 9px 12px -8px #4c00ff33;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 8px;
+}
+
+.svg_logo {
+    fill: var(--primary-color);
+}
+
+/* services */
+.gradiente {
+    background: linear-gradient(135deg, rgb(192, 192, 200) 30%, var(--secondary-color) 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dropDownDiv:hover .dropDownTitle {
+    background: #4c00ff20;
+}
+
+.dropDownDiv:hover .dropDown {
+    background: #4c00ff20;
+}
+
+/* introduction */
+.gradiente {
+    background: linear-gradient(to bottom right,
+            rgb(192, 192, 200),
+            var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.svg_logo {
+    stroke: var(--secondary-color);
+    transition: all ease-out 0.5;
+}
+
+.div_svgLogo:hover .svg_logo {
+    stroke: #eee;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}

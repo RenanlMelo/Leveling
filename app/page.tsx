@@ -1,0 +1,26 @@
+
+"use client"
+
+import { About } from "@/components/about/About";
+import { Cases } from "@/components/cases/Cases";
+import { Footer } from "@/components/footer/Footer";
+import { Header } from "@/components/header/Header";
+import { Introduction } from "@/components/introduction/Introduction";
+import { Services } from "@/components/services/Services";
+import { useState } from "react";
+
+export default function Home() {
+  
+  const [sectionSize, setSectionSize] = useState<number | null>(null);
+  
+  return (
+    <>
+      <Header sectionSize={sectionSize} />
+      <Introduction sectionSize={sectionSize} />
+      <Services setSectionSize={setSectionSize} />
+      <Cases />
+      <About />
+      <Footer />
+    </>
+  );
+}
