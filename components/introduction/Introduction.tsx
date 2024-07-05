@@ -58,7 +58,7 @@ export const Introduction: React.FC<introductionProps> = ({ sectionSize }) => {
             className="div_svgLogo gap-x-2 relative flex h-[calc(2.75vh+5px)] md:h-[calc(5.5vh+10px)] w-[30vw] md:w-fit items-center justify-center overflow-hidden rounded-full bg-transparent border-2 border-[#aaaaaa80] hover:border-[#aaa] text-[var(--secondary-color)] hover:text-[#eee] shadow-[0_15px_30px_-12px_rgba(0,0,0,1)] transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[var(--primary-color)] before:duration-500 before:ease-out hover:shadow-[var(--primary-color)] hover:before:h-56 hover:before:w-56"
           >
             <div className="grid grid-cols-4 items-center justify-center gap-x-1 px-[calc(1vw+4px)]">
-              <p className="text-[calc(.2vw+15px)] z-10 col-span-3 col-start-1 text-center">
+              <p className="text-[calc(.3vw+15px)] z-10 col-span-3 col-start-1 text-center">
                 Serviços
               </p>
               <svg
@@ -86,6 +86,8 @@ export const Introduction: React.FC<introductionProps> = ({ sectionSize }) => {
         </div>
         <Image
           src="/logo_introduction.png"
+          width={1000}
+          height={1000}
           alt="Logo com efeito"
           className="lg:w-[100%] blur-sm md:blur-none -z-10 md:right-32 top-16 md:top-32 col-start-1 lg:col-start-2 absolute md:static "
         />

@@ -54,7 +54,7 @@ export const Header: React.FC<headerProps> = ({ sectionSize }) => {
           initial={{ backgroundColor: "transparent" }}
           animate={controls}
         >
-          <Image src="/logo.png" alt="Logo" className="w-[calc(10vw+20px)] cursor-pointer" onClick={scrollTop} />
+          <Image src="/logo.png" alt="Logo" width={200} height={200} className="w-[calc(10vw+20px)] cursor-pointer" onClick={scrollTop} />
           <nav className="w-full flex justify-end items-center">
             <ul className="text-[calc(1.05vw+3px)] text-[#eee] flex gap-x-[1vw]">
               {menuItems.map((item, index) => (

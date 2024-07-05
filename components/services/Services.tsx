@@ -5,13 +5,20 @@ import { useEffect, useState } from "react";
 const servicesData = [
   // 1º Serviço
   {
-    title: "Página Estática",
+    title: "Blog",
     description:
-      "Gere leads e capture a atenção do seu público com uma Landing Page otimizada.",
+      "Transforme suas ideias em palavras e conecte-se com seu público.",
     linkHref: "",
   },
 
   // 2º Serviço
+  {
+    title: "Cartão de Visita Digital",
+    description: "Modernize sua apresentação com um Cartão de Visita Digital.",
+    linkHref: "",
+  },
+
+  // 3º Serviço
   {
     title: "Loja Virtual",
     description:
@@ -19,19 +26,11 @@ const servicesData = [
     linkHref: "",
   },
 
-  // 3º Serviço
-  {
-    title: "Blog",
-    description:
-      "Transforme suas ideias em palavras e conecte-se com seu público.",
-    linkHref: "",
-  },
-
   // 4º Serviço
   {
-    title: "Cartão de Visita Digital",
+    title: "Página Estática",
     description:
-      "Modernize sua apresentação com um Cartão de Visita Digital.",
+      "Gere leads e capture a atenção do seu público com uma Landing Page otimizada.",
     linkHref: "",
   },
 ];
@@ -61,7 +60,7 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
   const [openIndices, setOpenIndices] = useState<number | null>(null);
 
   const handleToggle = (index: number) => {
-    setOpenIndices(openIndices === index ? null : index)
+    setOpenIndices(openIndices === index ? null : index);
     // setOpenIndices((prevOpenIndices) => {
     //   if (prevOpenIndices.includes(index)) {
     //     return prevOpenIndices.filter((i) => i !== index);
@@ -83,10 +82,10 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
               Serviços oferecidos
             </h2>
             <p className="text-[calc(.8vw+8px)] text-[#ccc] px-10">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores,
-              cum itaque! Omnis incidunt hic laborum laboriosam praesentium,
-              quae ad eveniet autem fugiat quibusdam corporis impedit nihil
-              libero! Nesciunt, aspernatur deleniti!
+              Na Leveling, transformamos ideias em soluções incríveis a partir
+              de Desenvolvimento Web. Nossa abordagem centrada no cliente
+              garante uma experiencia única e resultados que não só atendem, mas
+              superam as necessidades e objetivos do mesmo.
             </p>
           </div>
           <blockquote className="text-[calc(.7vw+8px)] text-[#aaa] px-10 mt-[3vh]">
@@ -135,9 +134,9 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
                   <motion.div
                     className={`dropDown -z-10 `}
                     initial={{ height: 0 }}
-                    animate={{ height: 'auto' }}
+                    animate={{ height: "auto" }}
                     exit={{ height: 0 }}
-                    transition={{ duration: .5, ease: "easeInOut" }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
                   >
                     <motion.p className="px-[2vw] py-[2vh] text-[calc(.8vw+5px)] font-['Montserrat'] text-[#eee]">
                       {service.description}
@@ -149,6 +148,6 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
           ))}
         </div>
       </div>
-    </motion.section >
+    </motion.section>
   );
 };

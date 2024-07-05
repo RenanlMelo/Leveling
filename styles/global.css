@@ -19,12 +19,13 @@
     --dark-color: #4c00ff;
     --services-card: rgb(94, 0, 218);
     --services-cardHover: rgba(94, 0, 218, 0.565);
+    --dark-purple: #36017b;
     --services-bgDarken: rgba(20, 0, 60, 1);
 }
 
-select:focus > option:checked { 
+/* select:focus > option:hover { 
     background: var(--services-cardHover) !important;
-}
+} */
 
 ::selection {
     background-color: var(--services-card);
@@ -139,4 +140,5 @@ select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    
 }
