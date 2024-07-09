@@ -4,6 +4,7 @@
 import { About } from "@/components/about/About";
 import { Cases } from "@/components/cases/Cases";
 import { Footer } from "@/components/footer/Footer";
+import { Form } from "@/components/form/Form";
 import { Header } from "@/components/header/Header";
 import { Introduction } from "@/components/introduction/Introduction";
 import { Services } from "@/components/services/Services";

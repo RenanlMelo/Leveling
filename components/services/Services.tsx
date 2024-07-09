@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Form } from "../form/Form";
 
 // Serviços
 const servicesData = [
@@ -61,27 +62,21 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
 
   const handleToggle = (index: number) => {
     setOpenIndices(openIndices === index ? null : index);
-    // setOpenIndices((prevOpenIndices) => {
-    //   if (prevOpenIndices.includes(index)) {
-    //     return prevOpenIndices.filter((i) => i !== index);
-    //   } else {
-    //     return [...prevOpenIndices, index];
-    //   }
-    // });
   };
 
   return (
-    <motion.section
-      id="servicos"
-      className="h-fit w-full flex justify-center items-center relative px-[10vw] bg-no-repeat bg-cover z-10 py-32 bg-[url('/fundo.png')] bg-center shdow-[0_0_100px_50px_rgba(55,0,128,.3)]"
-    >
+    <motion.section className="h-[75%] w-full flex justify-center items-center relative px-[10vw] bg-no-repeat bg-cover z-10 py-32 bg-[url('/fundo2.png')] bg-right">
       <div className="grid grid-cols-2 gap-y-[4vw] justify-center items-center w-fit mx-auto">
         <div className="col-start-1 row-start-1 row-span-full flex justify-evenly flex-col">
           <div>
             <h2 className="text-[#eee] text-[2.25vw] font-bold tracking-wide ml-16 mb-4">
               Serviços oferecidos
             </h2>
-            <p className="text-[calc(.6vw+8px)] leading-9 text-[#ccc] px-10">
+
+            <p
+              id="servicos"
+              className="text-[calc(.6vw+8px)] leading-9 text-[#ccc] px-10"
+            >
               Na Leveling, transformamos ideias em soluções incríveis a partir
               de Desenvolvimento Web. Nossa abordagem centrada no cliente
               garante uma experiencia única e resultados que não só atendem, mas
@@ -89,8 +84,8 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
             </p>
           </div>
           <blockquote className="text-[calc(.5vw+8px)] text-[#aaa] px-10 mt-[3vh]">
-            &quot;Nossa missão é digitalizar os sonhos e objetivos de todos os
-            empreendedores.&quot;
+            &quot;Nossa missão é impulsionar negócios com o poder da
+            tecnologia.&quot;
             <br />- Leveling
           </blockquote>
         </div>
@@ -100,10 +95,10 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
             <motion.div
               key={index}
               onClick={() => handleToggle(index)}
-              className={`dropDownDiv grid w-[calc(65%+50px)] h-full rounded-bl-3xl rounded-tr-3xl border border-[#eeeeee50] relative cursor-pointer overflow-hidden`}
+              className={`dropDownDiv grid w-[calc(50%+50px)] h-full rounded-bl-3xl rounded-tr-3xl border border-[#eeeeee50] relative cursor-pointer overflow-hidden`}
             >
-              <div className="dropDownTitle flex justify-between items-center z-10 py-2">
-                <h4 className="text-[calc(.8vw+7px)] font-medium  text-[#eee] px-[2vw] whitespace-nowrap flex-grow">
+              <div className="dropDownTitle flex justify-between items-center z-10 py-[6px]">
+                <h4 className="text-[calc(.6vw+7px)] font-medium  text-[#eee] px-[2vw] whitespace-nowrap flex-grow">
                   {service.title}
                 </h4>
                 <svg
@@ -138,7 +133,7 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
                     exit={{ height: 0 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
                   >
-                    <motion.p className="px-[2vw] py-[2vh] text-[calc(.7vw+5px)] text-[#eee]">
+                    <motion.p className="px-[2vw] py-[2vh] text-[calc(.6vw+5px)] text-[#eee]">
                       {service.description}
                     </motion.p>
                   </motion.div>
@@ -147,6 +142,7 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
             </motion.div>
           ))}
         </div>
+        <Form />
       </div>
     </motion.section>
   );

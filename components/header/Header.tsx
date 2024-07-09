@@ -41,10 +41,10 @@ export const Header: React.FC<headerProps> = ({ sectionSize }) => {
 
   const scrollTop = () => {
     window.scrollTo({
-      top:0,
-      behavior: 'smooth',
-    })
-  }
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <>
@@ -54,14 +54,22 @@ export const Header: React.FC<headerProps> = ({ sectionSize }) => {
           initial={{ backgroundColor: "transparent" }}
           animate={controls}
         >
-          <Image src="/logo.png" alt="Logo" width={200} height={200} className="w-[calc(10vw+20px)] cursor-pointer" onClick={scrollTop} />
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={200}
+            height={200}
+            className="w-[calc(10vw+20px)] cursor-pointer"
+            onClick={scrollTop}
+          />
           <nav className="w-full flex justify-end items-center">
             <ul className="text-[calc(.85vw+3px)] text-[#eee] flex gap-x-[1vw]">
               {menuItems.map((item, index) => (
                 <li
                   key={index}
-                  className={`menu-item ${activeItem === item.id ? "active" : ""
-                    }`}
+                  className={`menu-item ${
+                    activeItem === item.id ? "'active'" : ""
+                  }`}
                   onClick={() => setActiveItem(item.id)}
                 >
                   <Link
@@ -87,4 +95,3 @@ export const Header: React.FC<headerProps> = ({ sectionSize }) => {
     </>
   );
 };
-

@@ -20,6 +20,7 @@
     --services-card: rgb(94, 0, 218);
     --services-cardHover: rgba(94, 0, 218, 0.565);
     --dark-purple: #36017b;
+    --dark-color: rgb(06, 06, 06);
     --services-bgDarken: rgba(20, 0, 60, 1);
 }
 
@@ -100,7 +101,7 @@ li:hover {
 
 /* services */
 .gradiente {
-    background: linear-gradient(135deg, rgb(192, 192, 200) 30%, var(--secondary-color) 60%);
+    background: linear-gradient(135deg, #c0c0c8 30%, var(--secondary-color) 60%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
