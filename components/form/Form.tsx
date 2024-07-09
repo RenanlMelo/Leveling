@@ -15,12 +15,12 @@ export const Form = () => {
   const [outros, setOutros] = useState("");
 
   return (
-    <>
-    <h2 className="text-[#eee] text-[calc(1.25vw+5px)] font-semibold text-start">Entre em contato conosco e peça seu serviço agora mesmo!</h2>
-      <section className="h-96 mt-10 mb-32">
+    <div className="flex justify-center items-center flex-col w-[50%] h-fit my-24 mx-auto py-24 border border-white/50 rounded-2xl">
+    <h2 className="text-[#eee] text-[calc(1.5vw+5px)] pb-10 font-semibold text-start">Entre em contato conosco agora mesmo!</h2>
+      <section className="mt-10 w-full px-[10%]">
         <form
           action="post"
-          className="h-full flex flex-col justify-start items-center gap-y-10"
+          className="h-full w-full flex flex-col justify-start items-center gap-y-10"
         >
           <input
             type="text"
@@ -101,6 +101,6 @@ export const Form = () => {
           />
         </form>
       </section>
-    </>
+    </div>
   );
 };

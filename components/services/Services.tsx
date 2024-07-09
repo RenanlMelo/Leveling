@@ -65,7 +65,7 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
   };
 
   return (
-    <motion.section className="h-[75%] w-full flex justify-center items-center relative px-[10vw] bg-no-repeat bg-cover z-10 py-32 bg-[url('/fundo2.png')] bg-right">
+    <motion.section className="px-[10vw] bg-no-repeat bg-cover py-32 bg-[url('/fundo2.png')] bg-right">
       <div className="grid grid-cols-2 gap-y-[4vw] justify-center items-center w-fit mx-auto">
         <div className="col-start-1 row-start-1 row-span-full flex justify-evenly flex-col">
           <div>
@@ -142,7 +142,6 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
             </motion.div>
           ))}
         </div>
-        <Form />
       </div>
     </motion.section>
   );

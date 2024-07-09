@@ -19,6 +19,7 @@ export default function Home() {
       <Header sectionSize={sectionSize} />
       <Introduction sectionSize={sectionSize} />
       <Services setSectionSize={setSectionSize} />
+      <Form />
       <Cases />
       <About />
       <Footer />
