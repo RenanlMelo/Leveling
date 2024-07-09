@@ -61,8 +61,9 @@ export const Form = () => {
                   transition={{ duration: 0.75, ease: "easeInOut" }} 
                   className=" -z-20 flex flex-col rounded-b-md absolute w-full  border-b border-white/50 bg-[#101010] overflow-hidden"
                 >
-                  {servicesOptions.map((service) => (
+                  {servicesOptions.map((service, index) => (
                     <motion.span
+                    key={index}
                       onClick={() => {
                         setSelectText(service.name),
                           setOpenSelect(!openSelect),
