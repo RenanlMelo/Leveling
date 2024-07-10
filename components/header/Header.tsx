@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import { Link } from "react-scroll";
 import Image from "next/image";
@@ -31,14 +31,6 @@ export const Header: React.FC<headerProps> = ({ sectionSize }) => {
     });
   }, [scrollY, controls]);
 
-  const [activeItem, setActiveItem] = useState("home");
-  const menuItems = [
-    { name: "Início", id: "inicio" },
-    { name: "Serviços", id: "servicos" },
-    { name: "Cases", id: "cases" },
-    { name: "Sobre", id: "sobre" },
-  ];
-
   const scrollTop = () => {
     window.scrollTo({
       top: 0,
@@ -46,10 +38,40 @@ export const Header: React.FC<headerProps> = ({ sectionSize }) => {
     });
   };
 
+  const [headerHeight, setHeaderHeight] = useState<number | null>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const getHeaderHeight = () => {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.clientHeight);
+      }
+    };
+
+    getHeaderHeight();
+
+    window.addEventListener("resize", getHeaderHeight);
+
+    return () => {
+      window.removeEventListener("resize", getHeaderHeight);
+    };
+  }, []);
+
+  const [activeItem, setActiveItem] = useState("home");
+  const menuItems = [
+    { name: "Início", id: "inicio", offset: headerHeight ?? 0 },
+    { name: "Serviços", id: "servicos", offset: sectionSize ?? 0 },
+    { name: "Form", id: "form", offset: headerHeight ?? 0 },
+    { name: "Cases", id: "cases", offset: headerHeight ?? 0 },
+    { name: "Sobre", id: "sobre", offset: headerHeight ?? 0 },
+  ];
+
   return (
     <>
       <AnimatePresence>
         <motion.header
+          ref={headerRef}
+          id="header"
           className="fixed grid grid-cols-2 justify-center items-center max-w-[93vw-20px] px-[calc(3.5vw+10px)] w-full z-40"
           initial={{ backgroundColor: "transparent" }}
           animate={controls}
@@ -68,7 +90,7 @@ export const Header: React.FC<headerProps> = ({ sectionSize }) => {
                 <li
                   key={index}
                   className={`menu-item ${
-                    activeItem === item.id ? "'active'" : ""
+                    activeItem === item.id ? "active" : ""
                   }`}
                   onClick={() => setActiveItem(item.id)}
                 >
@@ -76,11 +98,16 @@ export const Header: React.FC<headerProps> = ({ sectionSize }) => {
                     activeClass="active"
                     smooth
                     spy
+                    onClick={() => {console.log(sectionSize), console.log(item.offset);
+                    
+                    }}
                     duration={800}
                     offset={
-                      sectionSize !== null
+                      sectionSize !== null &&
+                      headerHeight !== null &&
+                      item.offset === sectionSize
                         ? -Math.round(window.innerHeight / 2 - sectionSize / 2)
-                        : 0
+                        : -item.offset
                     }
                     to={`${item.id}`}
                   >

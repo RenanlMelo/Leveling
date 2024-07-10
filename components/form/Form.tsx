@@ -15,92 +15,107 @@ export const Form = () => {
   const [outros, setOutros] = useState("");
 
   return (
-    <div className="flex justify-center items-center flex-col w-[50%] h-fit my-24 mx-auto py-24 border border-white/50 rounded-2xl">
-    <h2 className="text-[#eee] text-[calc(1.5vw+5px)] pb-10 font-semibold text-start">Entre em contato conosco agora mesmo!</h2>
-      <section className="mt-10 w-full px-[10%]">
-        <form
-          action="post"
-          className="h-full w-full flex flex-col justify-start items-center gap-y-10"
-        >
-          <input
-            type="text"
-            required
-            placeholder="Nome"
-            className="w-[calc(100%-80px)] px-4 py-2 bg-[#101010] text-[#eee] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
-          />
-          <input
-            type="email"
-            required
-            placeholder="E-mail"
-            className="w-[calc(100%-80px)] px-4 py-2 bg-[#101010] text-[#eee] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
-          />
-          {/* <select defaultValue="Serviço desejado" required className="w-[calc(100%-80px)] outline-none px-4 py-2 bg-[#101010] text-[#eee] rounded-lg text-lg bg-no-repeat bg-right border-r-[12px] cursor-pointer border-[#101010] hover:bg-[var(--dark-purple)] hover:border-[var(--dark-purple)]">
+    <AnimatePresence>
+      <motion.div
+        initial={{ height: 0 }}
+        animate={{ height: "auto" }}
+        exit={{ height: 0 }}
+        id="form"
+        className="flex justify-center items-center flex-col w-[50%] h-fit my-24 mx-auto py-24 border border-white/50 rounded-2xl relative"
+      >
+        <h2 className="text-[#eee] text-[calc(1.5vw+5px)] pb-10 font-semibold text-start">
+          Entre em contato conosco agora mesmo!
+        </h2>
+        <section className="mt-10 w-full px-[10%]">
+          <form
+            action="post"
+            className="h-full w-full flex flex-col justify-start items-center gap-y-[calc(3vh+10px)]"
+          >
+            <input
+              type="text"
+              required
+              placeholder="Nome"
+              className="w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[#eee] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
+            />
+            <input
+              type="email"
+              required
+              placeholder="E-mail"
+              className="w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[#eee] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
+            />
+            {/* <select defaultValue="Serviço desejado" required className="w-[calc(100%-80px)] outline-none px-4 py-2 bg-[#121212] text-[#eee] rounded-lg text-lg bg-no-repeat bg-right border-r-[12px] cursor-pointer border-[#121212] hover:bg-[var(--dark-purple)] hover:border-[var(--dark-purple)]">
             <option value="1" className="text-[#eee] rounded-md font-sans">Blog</option>
             <option value="2" className="text-[#eee] rounded-md">Cartão de Visita Digital</option>
             <option value="3" className="text-[#eee] rounded-md">Loja Virtual</option>
             <option value="4" className="text-[#eee] rounded-md">Página Estática</option>
             <option value="4" className="text-[#eee] rounded-md">Outros</option>
           </select> */}
-          <div className="z-30 w-[calc(100%-80px)] bg-[#101010] text-[#9ca3ad] rounded-lg text-lg relative">
-            <h4
-              onClick={() => setOpenSelect(!openSelect)}
-              className={`z-20 cursor-pointer px-4 py-2 rounded-md duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] hover:bg-[var(--services-cardHover)] hover:shadow-[0_4px_10px_rgba(94,0,218,.55)] ${
-                openSelect
-                  ? "bg-[url(/close_menu.png)]"
-                  : "bg-[url(/open_menu.png)]"
-              } bg-no-repeat bg-[98%_55%]`}
-            >
-              {selectText}
-            </h4>
+            <div className="z-30 w-[calc(100%-80px)] bg-[#121212] text-[#9ca3ad] rounded-lg text-lg relative">
+              <h4
+                onClick={() => setOpenSelect(!openSelect)}
+                className={`z-20 cursor-pointer px-4 py-2 rounded-md duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] hover:bg-[var(--services-cardHover)] hover:shadow-[0_4px_10px_rgba(94,0,218,.55)] ${
+                  openSelect
+                    ? "bg-[url(/close_menu.png)]"
+                    : "bg-[url(/open_menu.png)]"
+                } bg-no-repeat bg-[98%_55%]`}
+              >
+                {selectText}
+              </h4>
+              <AnimatePresence>
+                {openSelect && (
+                  <motion.div
+                    initial={{ height: 0 }}
+                    animate={{ height: "auto" }}
+                    exit={{ height: 0 }}
+                    transition={{ duration: 0.75, ease: "easeInOut" }}
+                    className=" -z-20 flex flex-col rounded-b-md absolute w-full  border-b border-white/50 bg-[#121212] overflow-hidden"
+                  >
+                    {servicesOptions.map((service, index) => (
+                      <motion.span
+                        key={index}
+                        onClick={() => {
+                          setSelectText(service.name),
+                            setOpenSelect(!openSelect),
+                            setOutros(service.name);
+                        }}
+                        className={`px-4 py-2 duration-300 hover:bg-[var(--services-cardHover)] cursor-pointer ${
+                          selectText === service.name
+                            ? "bg-[var(--dark-color)]"
+                            : "bg-transparent"
+                        } `}
+                      >
+                        {service.name}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
             <AnimatePresence>
-              {openSelect && (
-                <motion.div
-                  initial={{ height: 0 }}
-                  animate={{ height: "auto" }}
-                  exit={{ height: 0 }}
-                  transition={{ duration: 0.75, ease: "easeInOut" }} 
-                  className=" -z-20 flex flex-col rounded-b-md absolute w-full  border-b border-white/50 bg-[#101010] overflow-hidden"
-                >
-                  {servicesOptions.map((service, index) => (
-                    <motion.span
-                    key={index}
-                      onClick={() => {
-                        setSelectText(service.name),
-                          setOpenSelect(!openSelect),
-                          setOutros(service.name);
-                      }}
-                      className={`px-4 py-2 duration-300 hover:bg-[var(--services-cardHover)] cursor-pointer ${
-                        selectText === service.name
-                          ? "bg-[var(--dark-color)]"
-                          : "bg-transparent"
-                      } `}
-                    >
-                      {service.name}
-                    </motion.span>
-                  ))}
-                </motion.div>
+              {outros === "Outros" && (
+                <motion.input
+                  initial={{ width: 0, height: 0 }}
+                  animate={{ width: "calc(100% - 80px)", height: "auto" }}
+                  exit={{ width: 0, height: 0 }}
+                  type="text"
+                  required
+                  placeholder="Serviço desejado"
+                  className="w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[#eee] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
+                />
               )}
             </AnimatePresence>
-          </div>
-          {outros === "Outros" && (
+            <textarea
+              placeholder="Descrição"
+              className="w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[#eee] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
+            ></textarea>
             <input
-              type="text"
-              required
-              placeholder="Serviço desejado"
-              className="w-[calc(100%-80px)] px-4 py-2 bg-[#101010] text-[#eee] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
+              type="button"
+              value="Enviar"
+              className="w-[10vw] px-4 py-2 shadow-[0_4px_10px_rgba(94,0,218,.55)] bg-[var(--services-cardHover)] text-[#eee] rounded-lg text-lg hover:bg-[#121212] duration-300 hover:shadow-[0_4px_10px_rgba(250,250,250,.5)] hover:border-[#aaa] border border-transparent"
             />
-          )}
-          <textarea
-            placeholder="Descrição"
-            className="w-[calc(100%-80px)] px-4 py-2 bg-[#101010] text-[#eee] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
-          ></textarea>
-          <input
-            type="button"
-            value="Enviar"
-            className="w-[10vw] px-4 py-2 bg-[#101010] text-[#eee] rounded-lg text-lg hover:bg-[var(--services-cardHover)] duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] hover:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
-          />
-        </form>
-      </section>
-    </div>
+          </form>
+        </section>
+      </motion.div>
+    </AnimatePresence>
   );
 };
