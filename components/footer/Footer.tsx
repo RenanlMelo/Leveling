@@ -4,7 +4,7 @@ import React from "react";
 export const Footer = () => {
   return (
     <>
-      <footer className="flex justify-evenly items-center w-[100vw] h-96 mt-24 bg-[#020202] z-20 px-[5vw] py-[5vh]">
+      <footer className="flex justify-evenly items-center h-96 mt-24 bg-[#020202] z-20 px-[5vw] py-[5vh]">
         {/* <Image
           src="/watermark.png"
           alt="Marca d'água"
