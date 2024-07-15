@@ -89,17 +89,16 @@ export const Header: React.FC<headerProps> = ({ sectionSize }) => {
               {menuItems.map((item, index) => (
                 <li
                   key={index}
-                  className={`menu-item ${
-                    activeItem === item.id ? "active" : ""
-                  }`}
+                  className={`${activeItem === item.id ? "active" : ""}`}
                   onClick={() => setActiveItem(item.id)}
                 >
                   <Link
+                    className="menu-item"
                     activeClass="active"
                     smooth
                     spy
-                    onClick={() => {console.log(sectionSize), console.log(item.offset);
-                    
+                    onClick={() => {
+                      console.log(sectionSize), console.log(item.offset);
                     }}
                     duration={800}
                     offset={

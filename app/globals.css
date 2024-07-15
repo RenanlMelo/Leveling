@@ -85,24 +85,21 @@ body {
   background-color: #020202;
 }
 
-li {
+.menu-item {
   border-bottom: 2px solid transparent;
   transition: 0.3s all;
   border-width: 0%;
-  padding: 5px 16px;
   cursor: pointer;
-}
-
-li:hover {
-  border-bottom: 2px solid var(--primary-color);
-  box-shadow: 0 9px 12px -8px #4c00ff33;
-}
-
-.menu-item {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0 8px;
+  padding: 5px 16px;
+}
+
+.menu-item:hover {
+  border-bottom: 2px solid var(--primary-color);
+  box-shadow: 0 9px 12px -8px #4c00ff33;
 }
 
 .svg_logo {
