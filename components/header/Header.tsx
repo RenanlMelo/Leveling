@@ -61,7 +61,7 @@ export const Header: React.FC<headerProps> = ({ sectionSize }) => {
   const menuItems = [
     { name: "Início", id: "inicio", offset: headerHeight ?? 0 },
     { name: "Serviços", id: "servicos", offset: sectionSize ?? 0 },
-    { name: "Form", id: "form", offset: headerHeight ?? 0 },
+    { name: "Formulário", id: "form", offset: headerHeight ?? 0 },
     { name: "Cases", id: "cases", offset: headerHeight ?? 0 },
     { name: "Sobre", id: "sobre", offset: headerHeight ?? 0 },
   ];
@@ -85,7 +85,7 @@ export const Header: React.FC<headerProps> = ({ sectionSize }) => {
             onClick={scrollTop}
           />
           <nav className="w-full flex justify-end items-center">
-            <ul className="text-[calc(.85vw+3px)] text-[#eee] flex gap-x-[1vw]">
+            <ul className="text-[calc(.65vw+3px)] text-[#eee] flex gap-x-[1vw]">
               {menuItems.map((item, index) => (
                 <li
                   key={index}

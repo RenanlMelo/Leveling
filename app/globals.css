@@ -70,6 +70,16 @@
   background: transparent;
 }
 
+#success {
+  color: #ccc;
+  font-size: 2vw;
+}
+
+#error {
+  color: #ccc;
+  font-size: 2vw;
+}
+
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: #020202;
