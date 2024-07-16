@@ -61,7 +61,6 @@ export const Header: React.FC<headerProps> = ({ sectionSize }) => {
   const menuItems = [
     { name: "Início", id: "inicio", offset: headerHeight ?? 0 },
     { name: "Serviços", id: "servicos", offset: sectionSize ?? 0 },
-    { name: "Formulário", id: "form", offset: headerHeight ?? 0 },
     { name: "Cases", id: "cases", offset: headerHeight ?? 0 },
     { name: "Sobre", id: "sobre", offset: headerHeight ?? 0 },
   ];
