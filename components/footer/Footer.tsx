@@ -6,7 +6,6 @@ const datatime: Date = new Date();
 const year: number = datatime.getFullYear();
 
 export const Footer = () => {
-
   return (
     <>
       <footer className="grid grid-cols-5 justify-between items-center h-96 mt-24 bg-[#020202] z-20 px-[15vw] py-[5vh]">
@@ -71,7 +70,10 @@ export const Footer = () => {
             <h5>(15) xxxxx-xxxx</h5>
           </a>
         </div>
-        <div className="w-full border-t border-[#3b3b3b] text-[#eee] text-center row-start-2 col-span-5 mt-10 pt-4 pb-10"> Copyright © Leveling {year}.</div>
+        <div className="w-full border-t border-[#3b3b3b] text-[var(--text-color)] text-center row-start-2 col-span-5 mt-10 pt-4 pb-10">
+          {" "}
+          Copyright © Leveling {year}.
+        </div>
       </footer>
     </>
   );

@@ -84,7 +84,7 @@ export const Header: React.FC<headerProps> = ({ sectionSize }) => {
             onClick={scrollTop}
           />
           <nav className="w-full flex justify-end items-center">
-            <ul className="text-[calc(.65vw+3px)] text-[#eee] flex gap-x-[1vw]">
+            <ul className="text-[calc(.65vw+3px)] text-[var(--text-color)] flex gap-x-[1vw]">
               {menuItems.map((item, index) => (
                 <li
                   key={index}

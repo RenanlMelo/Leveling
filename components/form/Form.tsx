@@ -111,6 +111,8 @@ export const Form = () => {
   //   formSubmit.init();
   // }, []);
 
+  const var_randomTime = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const buttonSubmit: HTMLElement | null =
@@ -126,14 +128,21 @@ export const Form = () => {
 
       const formElement: HTMLElement | null =
         document.getElementById("insideForm");
+
       const message: HTMLElement | null = document.getElementById("loaded");
 
-      if (formElement && message) {
+      const formTitle: HTMLElement | null = document.getElementById("title");
+
+      if (formElement && message && formTitle) {
         formElement.style.visibility = "hidden";
         formElement.style.pointerEvents = "none";
+
+        formTitle.style.visibility = "hidden";
+        formTitle.style.pointerEvents = "none";
+
         message.style.display = "block";
       }
-    }, 2000);
+    }, var_randomTime);
   };
 
   return (
@@ -148,13 +157,13 @@ export const Form = () => {
             <div id="loaded">
               <span>Seu pedido foi enviado com sucesso!</span>
             </div>
-            <h2
-              id="title"
-              className="text-[#eee] text-[calc(1.5vw+5px)] text-center pb-10 font-semiboldF"
-            >
-              Entre em contato conosco agora mesmo!
-            </h2>
-            <div className="mt-10 px-[10%]">
+            <div className="px-[10%]">
+              <h2
+                id="title"
+                className="text-[var(--text-color)] text-[calc(1.5vw+5px)] text-center pb-20 font-semiboldF"
+              >
+                Entre em contato conosco agora mesmo!
+              </h2>
               <form
                 id="insideForm"
                 method="POST"
@@ -168,14 +177,14 @@ export const Form = () => {
                   required
                   name="Nome"
                   placeholder="Nome"
-                  className="w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[#eee] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
+                  className="w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[var(--text-color)] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
                 />
                 <input
                   type="email"
                   required
                   name="Email"
                   placeholder="E-mail"
-                  className="w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[#eee] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
+                  className="w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[var(--text-color)] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
                 />
                 <div className="z-30 w-[calc(100%-80px)] bg-[#121212] text-[#9ca3ad] rounded-lg text-lg relative">
                   <h4
@@ -234,21 +243,21 @@ export const Form = () => {
                       name="Serviço diferente"
                       required
                       placeholder="Serviço desejado"
-                      className="w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[#eee] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
+                      className="w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[var(--text-color)] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
                     />
                   )}
                 </AnimatePresence>
                 <textarea
                   name="Descrição"
                   placeholder="Descrição"
-                  className="w-[calc(100%-80px)] px-4 py-2 min-h-[150px] bg-[#121212] resize-none text-[#eee] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
+                  className="w-[calc(100%-80px)] px-4 py-2 min-h-[150px] bg-[#121212] resize-none text-[var(--text-color)] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
                 ></textarea>
                 <button
                   id="buttonSubmit"
                   type="submit"
                   value="Enviar"
                   data-button
-                  className="w-[10vw] px-4 py-2 shadow-[0_4px_10px_rgba(94,0,218,.55)] bg-[var(--services-cardHover)] text-[#eee] rounded-lg text-lg hover:bg-[#121212] duration-300 hover:shadow-[0_4px_10px_rgba(250,250,250,.5)] hover:border-[#aaa] border border-transparent"
+                  className="w-[10vw] px-4 py-2 shadow-[0_4px_10px_rgba(94,0,218,.55)] bg-[var(--services-cardHover)] text-[var(--text-color)] rounded-lg text-lg hover:bg-[#121212] duration-300 hover:shadow-[0_4px_10px_rgba(250,250,250,.5)] hover:border-[#aaa] border border-transparent"
                 >
                   Enviar
                 </button>

@@ -17,11 +17,14 @@
   --secondaryDarken-color: #814bffcc;
 
   --dark-color: #4c00ff;
-  --services-card: rgb(94, 0, 218);
+  --services-card: #5e00da;
   --services-cardHover: rgba(94, 0, 218, 0.565);
   --dark-purple: #36017b;
   --dark-color: rgb(06, 06, 06);
   --services-bgDarken: rgba(20, 0, 60, 1);
+
+  --text-color: #eee;
+  --text-lightColor: #aaa;
 }
 
 /* select:focus > option:hover { 
@@ -209,7 +212,7 @@ a:hover:nth-child(3) h5 {
   display: inline-block;
   border: 1px solid #eee;
   border-radius: 10px;
-  color: #eee;
+  color: var(--text-color);
   padding: 1.5vh 2vw;
   overflow: hidden;
   transition: color 0.35s ease-out;
@@ -232,7 +235,7 @@ a:hover:nth-child(3) h5 {
 }
 
 .aboutButton:hover {
-  color: #eee;
+  color: var(--text-color);
 }
 
 .loading::before {
@@ -280,7 +283,7 @@ a:hover:nth-child(3) h5 {
   flex-wrap: nowrap;
   margin: auto;
   width: fit-content;
-  color: #eee;
+  color: var(--text-color);
   font-weight: 700;
   font-size: 2vw;
   padding: 3vh 2vw;
