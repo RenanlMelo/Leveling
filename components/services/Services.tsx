@@ -95,7 +95,7 @@ export const Services: React.FC<serviceProps> = ({ setSectionSize }) => {
             <motion.div
               key={index}
               onClick={() => handleToggle(index)}
-              className={`dropDownDiv grid w-[calc(50%+50px)] h-full rounded-bl-3xl rounded-tr-3xl border border-[var(--text-color)eee50] relative cursor-pointer overflow-hidden`}
+              className={`dropDownDiv grid w-[calc(50%+50px)] h-full rounded-bl-3xl rounded-tr-3xl border border-[var(--text-lightColor)] relative cursor-pointer overflow-hidden`}
             >
               <div className="dropDownTitle flex justify-between items-center z-10 py-[6px]">
                 <h4 className="text-[calc(.6vw+7px)] font-medium  text-[var(--text-color)] px-[2vw] whitespace-nowrap flex-grow">
