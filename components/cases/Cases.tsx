@@ -4,19 +4,29 @@ import Image from "next/image";
 
 const casesData = [
   {
-    url: "autosalesbrasil",
+    name: "autosalesbrasil",
     image: "/autosalesbrasil_image.png",
     title: "Auto Sales Brasil",
     subtittle: "E-commerce institucional",
     description: "Website destinado a revenda de veículos",
+    url: "https://autosalesbrasil.vercel.app/",
   },
   {
-    url: "unilockpisos",
-    image: "/image.png",
+    name: "unilockpisos",
+    image: "/unilockpisos_image.png",
     title: "Unilock Pisos",
-    subtittle: "Em construção",
+    subtittle: "Site institucional",
     description:
-      "...",
+      "Website institucional destinado a instalação de pisos intertravados",
+    url: "https://unilockpisos.com.br",
+  },
+  {
+    name: "pitows",
+    image: "/emconstrucao.png",
+    title: "Pitows Alfaiataria",
+    subtittle: "E-commerce institucional",
+    description: "...",
+    url: "",
   },
 ];
 
@@ -27,26 +37,20 @@ export const Cases = () => {
     <>
       <section
         id="cases"
-        className="w-full flex flex-col justify-center items-center my-24 relative"
+        className="w-full flex flex-col justify-center items-center my-12 relative"
       >
-        {/* <Image
-          src="/fundo_branco.png"
-          alt="Fundo"
-          width={500}
-          height={500}
-          className="absolute top-0 right-0 w-[500px] h-[500px] z-50"
-        /> */}
-        <h1 className="text-[var(--text-color)] text-[2.25vw] font-bold tracking-wide mb-[calc(5vh+10px)]">
+        <h1 className="text-[var(--text-color)] text-[7vw] xl:text-[2.25vw] font-bold tracking-wide pt-12 xl:mb-[calc(5vh+10px)]">
           Cases
         </h1>
-        <div className="w-full grid grid-cols-2 justify-evenly items-center px-[20vw] gap-x-[10vw]">
+        <div className="w-full flex flex-col gap-y-[5vh] xl:grid xl:grid-cols-3 justify-evenly items-center px-[5vw] xl:px-[10vw] gap-x-[5vw]">
           {casesData.map((project, index) => (
             <div
               onMouseEnter={() => setVisibleIndex(index)}
               onMouseLeave={() => setVisibleIndex(null)}
-              className="flex flex-col justify-evenly font-sans shadow-shadow_card bg-gradient-to-t relative"
+              className="flex flex-col justify-evenly font-sans shadow-shadow_card relative rounded-lg overflow-hidden"
               key={index}
             >
+              <a href={project.url} target="_blank" rel="noopener noreferrer">
               <Image
                 src={project.image}
                 alt="Imagem de fundo"
@@ -54,14 +58,15 @@ export const Cases = () => {
                 height={900}
                 className="duration-300 aspect-video"
               />
-              <div className="py-[4vh]">
-                <h2 className="text-[calc(1.15vw+5px)] font-bold text-[var(--text-color)] ml-[2.5vw] pb-[1vh] rounded-3xl w-fit">
+              </a>
+              <div className="py-[2vh]">
+                <h2 className="text-[6vw] xl:text-[calc(1.15vw+5px)] font-bold text-[var(--text-lightColor)] ml-[2.5vw] pb-[1vh] rounded-3xl w-fit">
                   {project.title}
                 </h2>
-                <p className="text-[calc(1vw+2px)] ml-[2vw] pb-[5vh] font-semibold text-[#ccc] w-fit text-start">
+                <p className="text-[5.5vw] xl:text-[calc(1vw+2px)] ml-[2vw] pb-[2.5vh] xl:pb-[5vh] font-semibold text-[#aaa] w-fit text-start">
                   {project.subtittle}
                 </p>
-                <p className="text-[calc(.8vw+2px)] text-[#ccc] ml-[2vw]">
+                <p className="text-[5vw] xl:text-[calc(.8vw+2px)] text-[#9090900] mx-[2vw]">
                   {project.description}
                 </p>
                 <span className="w-(calc(100%-2vw)) h-[calc(4vh+10px)] flex justify-end items-center mx-[2vw] py-[2vh] overflow-hidden relative">
@@ -78,7 +83,7 @@ export const Cases = () => {
                           visibleIndex === index ? "opacity-100" : "opacity-0"
                         }`}
                       >
-                        {/* Saiba mais */}
+                        Saiba mais
                       </motion.a>
                     )}
                   </AnimatePresence>

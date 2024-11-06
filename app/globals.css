@@ -25,11 +25,13 @@
 
   --text-color: #eee;
   --text-lightColor: #aaa;
-}
 
-/* select:focus > option:hover { 
-    background: var(--services-cardHover) !important;
-} */
+  --icon-insta: #f271a2;
+  --shadow-insta: #e1306cbf;
+
+  --icon-linkedin: #0073b2;
+  --shadow-linkedin: #0073b2cc;
+}
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -83,9 +85,26 @@
   font-size: 2vw;
 }
 
+a:hover:nth-child(1) .social_logo,
+a:hover:nth-child(1) h5 {
+  fill: var(--icon-linkedin);
+  color: var(--icon-linkedin);
+  filter: drop-shadow(0 0 5px var(--shadow-linkedin));
+}
+
+a:hover:nth-child(2) .social_logo,
+a:hover:nth-child(2) h5 {
+  fill: var(--icon-insta);
+  color: var(--icon-insta);
+  filter: drop-shadow(0 0 5px var(--shadow-insta));
+}
+
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: #020202;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
 .menu-item {
@@ -107,6 +126,10 @@ body {
 
 .svg_logo {
   fill: var(--primary-color);
+}
+
+.services_nav_button:hover .svg_logo {
+  stroke: #eee;
 }
 
 /* services */
@@ -148,26 +171,6 @@ select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-}
-
-a:hover:nth-child(1) .social_logo,
-a:hover:nth-child(1) h5 {
-  fill: #f271a2;
-  color: #f271a2;
-  filter: drop-shadow(0 0 5px rgba(225, 48, 108, 0.75));
-}
-
-a:hover:nth-child(2) .social_logo,
-a:hover:nth-child(2) h5 {
-  fill: #eee;
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
-}
-
-a:hover:nth-child(3) .social_logo,
-a:hover:nth-child(3) h5 {
-  fill: #25d366;
-  color: #25d366;
-  filter: drop-shadow(0 0 5px #25d366);
 }
 
 .activeButton {

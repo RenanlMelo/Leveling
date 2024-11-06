@@ -150,17 +150,16 @@ export const Form = () => {
       <AnimatePresence>
         <motion.section
           id="form"
-          className="flex bg-[url(/fundo_linha.png)] bg-center bg-no-repeat justify-center items-center flex-col w-[100%] h-fit py-24 relative"
+          className="flex justify-center items-center flex-col h-fit py-12 relative"
         >
-          {/* <Image src='/fundo_branco.png' alt='line' width={150} height={200} className="absolute left-0 top-1/2 -translate-y-1/2" /> */}
-          <div className=" w-[50%] border border-white/50 rounded-2xl py-24 backdrop-blur-lg relative">
+          <div className="w-full xl:w-[75%] rounded-2xl backdrop-blur-lg relative">
             <div id="loaded">
               <span>Seu pedido foi enviado com sucesso!</span>
             </div>
-            <div className="px-[10%]">
+            <div className="flex flex-col xl:flex-row justify-between items-center gap-x-[10%] px-[5vw] ">
               <h2
                 id="title"
-                className="text-[var(--text-color)] text-[calc(1.5vw+5px)] text-center pb-20 font-semiboldF"
+                className="text-[var(--text-color)] text-[6vw] xl:text-[calc(1.5vw+5px)] xl:text-center pb-6 xl:pb-0 font-semibold"
               >
                 Entre em contato conosco agora mesmo!
               </h2>
@@ -170,23 +169,23 @@ export const Form = () => {
                 data-form
                 onSubmit={handleSubmit}
                 action="https://formsubmit.co/ajax/renanlaramelo@gmail.com"
-                className="h-full w-full flex flex-col justify-start items-center gap-y-[calc(3vh+10px)]"
+                className="h-full w-full flex flex-col justify-start items-center gap-y-[calc(3vh-10px)] bg-[#60606010] py-[5vh] rounded-xl shadow-2xl"
               >
                 <input
                   type="text"
                   required
                   name="Nome"
                   placeholder="Nome"
-                  className="w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[var(--text-color)] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
+                  className="w-[calc(100%-40px)] xl:w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[var(--text-color)] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
                 />
                 <input
                   type="email"
                   required
                   name="Email"
                   placeholder="E-mail"
-                  className="w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[var(--text-color)] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
+                  className="w-[calc(100%-40px)] xl:w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[var(--text-color)] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
                 />
-                <div className="z-30 w-[calc(100%-80px)] bg-[#121212] text-[#9ca3ad] rounded-lg text-lg relative">
+                <div className="z-30 w-[calc(100%-40px)] xl:w-[calc(100%-80px)] bg-[#121212] text-[#9ca3ad] rounded-lg text-lg relative">
                   <h4
                     onClick={() => setOpenSelect(!openSelect)}
                     className={`z-20 cursor-pointer px-4 py-2 rounded-md duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] hover:bg-[var(--services-cardHover)] hover:shadow-[0_4px_10px_rgba(94,0,218,.55)] ${
@@ -243,21 +242,21 @@ export const Form = () => {
                       name="Serviço diferente"
                       required
                       placeholder="Serviço desejado"
-                      className="w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[var(--text-color)] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
+                      className="w-[calc(100%-40px)] xl:w-[calc(100%-80px)] px-4 py-2 bg-[#121212] text-[var(--text-color)] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
                     />
                   )}
                 </AnimatePresence>
                 <textarea
                   name="Descrição"
                   placeholder="Descrição"
-                  className="w-[calc(100%-80px)] px-4 py-2 min-h-[150px] bg-[#121212] resize-none text-[var(--text-color)] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
+                  className="w-[calc(100%-40px)] xl:w-[calc(100%-80px)] px-4 py-2 min-h-[150px] bg-[#121212] resize-none text-[var(--text-color)] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,1)] focus:bg-[var(--services-cardHover)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]"
                 ></textarea>
                 <button
                   id="buttonSubmit"
                   type="submit"
                   value="Enviar"
                   data-button
-                  className="w-[10vw] px-4 py-2 shadow-[0_4px_10px_rgba(94,0,218,.55)] bg-[var(--services-cardHover)] text-[var(--text-color)] rounded-lg text-lg hover:bg-[#121212] duration-300 hover:shadow-[0_4px_10px_rgba(250,250,250,.5)] hover:border-[#aaa] border border-transparent"
+                  className="w-[calc(100%-40px)] xl:w-[10vw] px-4 py-2 shadow-[0_4px_10px_rgba(94,0,218,.55)] bg-[var(--services-cardHover)] text-[var(--text-color)] rounded-lg text-lg hover:bg-[#121212] duration-300 hover:shadow-[0_4px_10px_rgba(250,250,250,.5)] hover:border-[#aaa] border border-transparent"
                 >
                   Enviar
                 </button>
