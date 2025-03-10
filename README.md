@@ -12,3 +12,30 @@ O **Leveling** é uma Landing Page desenvolvida para apresentar os serviços, pr
 - Exibição de projetos desenvolvidos, destacando qualidade e inovação.
 - Animações dinâmicas para uma experiência mais envolvente.
 - Otimização para SEO e carregamento rápido das páginas.
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/RenanlMelo/leveling_nextjs.git
+```
+
+Go to the project directory
+
+```bash
+  cd leveling_nextjs
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
