@@ -18,7 +18,7 @@
 
 Clone the project
 ```bash
-  git clone https://github.com/RenanlMelo/leveling_nextjs.git
+  git clone https://github.com/RenanlMelo/Leveling.git
 ```
 
 Go to the project directory
