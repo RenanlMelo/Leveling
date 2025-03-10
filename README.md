@@ -6,6 +6,7 @@
 ## 🚀 Technologies Used
 - **Next.js** → React framework that enables optimization, hybrid rendering (SSR and SSG), and improved performance.
 - **Framer Motion** → Library for smooth and interactive animations in React, ensuring an engaging visual experience.
+- **Tailwind CSS** → Framework for fast and responsive styling.
 
 ## 🎯 Features
 - Clear presentation of the services offered by the startup.
